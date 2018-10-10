@@ -22,7 +22,16 @@ struct node * insert_front(struct node * head, char * adding){
 
 
 struct node * free_list(struct node * a){
-  return a;
+  while ((*a).next) {
+    struct node * temp;
+    temp = (*a).next;
+    printf("%p\n", a);
+    printf("%p\n", temp);
+    printf("%p\n", (*a).next);
+    free_list(a);
+    a = temp;
+  }
+  return (&a);
 }
 
 /*

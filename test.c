@@ -14,8 +14,11 @@ int main(){
 
   //linkedlist with nodes a,b,c
   struct node a;
+  //a = * (struct node *) malloc(sizeof(struct node));
   struct node b;
+  //b = * (struct node *) malloc(sizeof(struct node));
   struct node c;
+  //c = * (struct node *) malloc(sizeof(struct node));
   strcpy(a.value, "hello");
   a.next = &(b);
   strcpy(b.value, "bello");
@@ -35,5 +38,8 @@ int main(){
   printf("%p\n", d);
   print_list(d);
   printf("\n\n\n");
+
+  //freeing up linkedlist
+  free_list(d);
   return 0;
 }
